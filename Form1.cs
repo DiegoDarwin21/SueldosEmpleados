@@ -15,6 +15,7 @@ namespace SueldosEmpleados
     {
         List<Empleado> listaEmpleados = new List<Empleado>();
         List<Asistencia> listaAsistencia = new List<Asistencia>();
+        List<Reporte_Sueldos> listaSueldos = new List<Reporte_Sueldos>();
         public Form1()
         {
             InitializeComponent();
@@ -23,6 +24,20 @@ namespace SueldosEmpleados
         private void Form1_Load(object sender, EventArgs e)
         {
             leer();
+
+            Reporte_Sueldos p = new Reporte_Sueldos();
+            for(int x=0; x<listaEmpleados.Count; x++)
+            {
+                p.Nombre = listaEmpleados[x].Nombre;
+                comboBox1.Items.Add(p.Nombre);// se cargan de una vez los nombres al combo
+                p.SueldoHora = listaEmpleados[x].SueldoHora;
+                p.HorasMes = listaAsistencia[x].HorasMes;
+                p.SueldoTotal = (p.SueldoHora * p.HorasMes);
+
+                listaSueldos.Add(p);
+
+
+            }
         }
 
         private void leer()
@@ -68,6 +83,11 @@ namespace SueldosEmpleados
             dataGridView2.DataSource = null;
             dataGridView2.DataSource = listaAsistencia;
             dataGridView2.Refresh();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
