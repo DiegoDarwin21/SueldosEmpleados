@@ -46,6 +46,7 @@ namespace SueldosEmpleados
             this.buttonCargar_Datos.TabIndex = 0;
             this.buttonCargar_Datos.Text = "Cargar Datos";
             this.buttonCargar_Datos.UseVisualStyleBackColor = true;
+            this.buttonCargar_Datos.Click += new System.EventHandler(this.buttonCargar_Datos_Click);
             // 
             // dataGridView1
             // 
@@ -92,6 +93,7 @@ namespace SueldosEmpleados
             this.Controls.Add(this.buttonCargar_Datos);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
