@@ -25,9 +25,10 @@ namespace SueldosEmpleados
         {
             leer();
 
-            Reporte_Sueldos p = new Reporte_Sueldos();
+           
             for(int x=0; x<listaEmpleados.Count; x++)
             {
+                Reporte_Sueldos p = new Reporte_Sueldos();
                 p.Nombre = listaEmpleados[x].Nombre;
                 comboBox1.Items.Add(p.Nombre);// se cargan de una vez los nombres al combo
                 p.SueldoHora = listaEmpleados[x].SueldoHora;
@@ -35,8 +36,6 @@ namespace SueldosEmpleados
                 p.SueldoTotal = (p.SueldoHora * p.HorasMes);
 
                 listaSueldos.Add(p);
-
-
             }
         }
 
@@ -83,11 +82,31 @@ namespace SueldosEmpleados
             dataGridView2.DataSource = null;
             dataGridView2.DataSource = listaAsistencia;
             dataGridView2.Refresh();
+
+            dataGridView3.DataSource = null;
+            dataGridView3.DataSource = listaSueldos;
+            dataGridView3.Refresh();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox1.Text = " ";
+        }
+
+        private void buttonMostrar_Click(object sender, EventArgs e)
+        {
+            int i = comboBox1.SelectedIndex;
+            textBox1.Text = "Q." + listaSueldos[i].SueldoTotal;
         }
     }
 }
