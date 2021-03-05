@@ -1,0 +1,15 @@
+1
+150
+Enero
+3
+80
+Febrero
+3
+168
+Abril
+2
+100
+Mayo
+1
+120
+Marzo
