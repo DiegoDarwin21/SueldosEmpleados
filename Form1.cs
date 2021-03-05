@@ -26,16 +26,35 @@ namespace SueldosEmpleados
             leer();
 
            
-            for(int x=0; x<listaEmpleados.Count; x++)
+           /* for(int x=0; x<listaEmpleados.Count; x++)
             {
                 Reporte_Sueldos p = new Reporte_Sueldos();
                 p.Nombre = listaEmpleados[x].Nombre;
-                comboBox1.Items.Add(p.Nombre);// se cargan de una vez los nombres al combo
+               // comboBox1.Items.Add(p.Nombre);// se cargan de una vez los nombres al combo
                 p.SueldoHora = listaEmpleados[x].SueldoHora;
                 p.HorasMes = listaAsistencia[x].HorasMes;
                 p.SueldoTotal = (p.SueldoHora * p.HorasMes);
 
                 listaSueldos.Add(p);
+            }*/
+           for(int x=0; x<listaEmpleados.Count; x++)
+            {
+                for(int y=0; y<listaAsistencia.Count; y++)
+                {
+                    if (listaEmpleados[x].Codigo == listaAsistencia[y].Codigo)
+                    {
+                        Reporte_Sueldos em= new Reporte_Sueldos();
+                        em.Codigo = listaEmpleados[x].Codigo;
+                        em.Nombre = listaEmpleados[x].Nombre;
+                        em.SueldoHora = listaEmpleados[x].SueldoHora;
+                        em.HorasMes = listaAsistencia[y].HorasMes;
+                        em.SueldoTotal = em.SueldoHora * em.HorasMes;
+                        em.Mes = listaAsistencia[y].Mes;
+
+                        listaSueldos.Add(em);
+
+                    }
+                }
             }
         }
 
@@ -86,6 +105,13 @@ namespace SueldosEmpleados
             dataGridView3.DataSource = null;
             dataGridView3.DataSource = listaSueldos;
             dataGridView3.Refresh();
+
+            comboBox1.DisplayMember = "Nombre";
+            comboBox1.ValueMember = "Codigo";
+            comboBox1.DataSource = null;
+            comboBox1.DataSource = listaEmpleados;
+            comboBox1.Refresh();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -100,13 +126,19 @@ namespace SueldosEmpleados
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            textBox1.Text = " ";
+            textNombre.Text = " ";
         }
 
         private void buttonMostrar_Click(object sender, EventArgs e)
         {
-            int i = comboBox1.SelectedIndex;
-            textBox1.Text = "Q." + listaSueldos[i].SueldoTotal;
+            /* int i = comboBox1.SelectedIndex;
+             textNombre.Text = "Q." + listaSueldos[i].SueldoTotal;*/
+            int noEmpleado = Convert.ToInt32(comboBox1.SelectedValue);
+            Reporte_Sueldos empleadoSueldo = listaSueldos.Find(s => s.Codigo == noEmpleado);
+            textNombre.Text = empleadoSueldo.Nombre;
+            textSueldo.Text = "Q." + empleadoSueldo.SueldoTotal;
+            textMes.Text = empleadoSueldo.Mes;
+
         }
     }
 }

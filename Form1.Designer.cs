@@ -37,9 +37,13 @@ namespace SueldosEmpleados
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
             this.buttonMostrar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textSueldo = new System.Windows.Forms.TextBox();
+            this.textMes = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -86,9 +90,9 @@ namespace SueldosEmpleados
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(417, 263);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 16);
+            this.label1.Size = new System.Drawing.Size(51, 16);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Sueldo del Empleado";
+            this.label1.Text = "Nombre";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dataGridView3
@@ -117,16 +121,16 @@ namespace SueldosEmpleados
             this.label3.TabIndex = 7;
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
-            // textBox1
+            // textNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(542, 261);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(83, 20);
-            this.textBox1.TabIndex = 8;
+            this.textNombre.Location = new System.Drawing.Point(484, 261);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(205, 20);
+            this.textNombre.TabIndex = 8;
             // 
             // buttonMostrar
             // 
-            this.buttonMostrar.Location = new System.Drawing.Point(526, 322);
+            this.buttonMostrar.Location = new System.Drawing.Point(542, 380);
             this.buttonMostrar.Name = "buttonMostrar";
             this.buttonMostrar.Size = new System.Drawing.Size(114, 30);
             this.buttonMostrar.TabIndex = 9;
@@ -143,14 +147,50 @@ namespace SueldosEmpleados
             this.label4.TabIndex = 10;
             this.label4.Text = "Seleccione un Empleado en específico";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(428, 296);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(40, 13);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "Sueldo";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(441, 333);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(27, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Mes";
+            // 
+            // textSueldo
+            // 
+            this.textSueldo.Location = new System.Drawing.Point(484, 296);
+            this.textSueldo.Name = "textSueldo";
+            this.textSueldo.Size = new System.Drawing.Size(100, 20);
+            this.textSueldo.TabIndex = 13;
+            // 
+            // textMes
+            // 
+            this.textMes.Location = new System.Drawing.Point(484, 333);
+            this.textMes.Name = "textMes";
+            this.textMes.Size = new System.Drawing.Size(100, 20);
+            this.textMes.TabIndex = 14;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textMes);
+            this.Controls.Add(this.textSueldo);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.buttonMostrar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textNombre);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView3);
@@ -180,9 +220,13 @@ namespace SueldosEmpleados
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Button buttonMostrar;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textSueldo;
+        private System.Windows.Forms.TextBox textMes;
     }
 }
 
